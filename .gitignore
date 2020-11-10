@@ -1,0 +1,8 @@
+.idea
+/node_modules/
+/.next/
+/out/
+schema.graphql
+/src/generated/
+.graphqlconfig
+.env.local

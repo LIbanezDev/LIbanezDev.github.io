@@ -1,0 +1,18 @@
+query me {
+    viewer {
+        login
+        avatarUrl
+        repositories(first: 100) {
+            totalCount
+            edges {
+                node {
+                    name
+                    createdAt
+                    id
+                    description
+                    shortDescriptionHTML
+                }
+            }
+        }
+    }
+}
