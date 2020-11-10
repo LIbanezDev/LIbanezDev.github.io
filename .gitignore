@@ -4,3 +4,4 @@
 /out/
 schema.graphql
 .graphqlconfig
+.env.local
