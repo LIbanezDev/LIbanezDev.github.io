@@ -3,6 +3,4 @@
 /.next/
 /out/
 schema.graphql
-/src/generated/
 .graphqlconfig
-.env.local
