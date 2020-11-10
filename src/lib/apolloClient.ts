@@ -11,7 +11,7 @@ function createApolloClient() {
             uri: 'https://api.github.com/graphql', // Server URL (must be absolute)
             credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
             headers: {
-                Authorization: "Bearer efee8bb4308ad3372882c9510482bb1be4dbb48d"
+                Authorization: "Bearer " + process.env.GITHUB_KEY
             }
         }),
         cache: new InMemoryCache(),
