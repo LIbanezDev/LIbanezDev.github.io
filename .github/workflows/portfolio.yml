@@ -19,6 +19,8 @@ jobs:
         node-version: [14.x]
 
     steps:
+    - env:
+        GITHUB_KEY: e9f969f6d108cf73deb91f72b90ad83fc2fc8751
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
