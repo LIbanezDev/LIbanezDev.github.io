@@ -1,18 +1,25 @@
-query me {
-    viewer {
-        login
-        avatarUrl
-        repositories(first: 100) {
-            totalCount
-            edges {
-                node {
-                    name
-                    createdAt
-                    id
-                    description
-                    shortDescriptionHTML
-                }
+query getTrendingGifs {
+    trendingGifs {
+        id
+        bitly_url
+        images{
+            fixed_height {
+                height
+                width
+                url
             }
         }
+    }
+}
+
+query getMyUsers {
+    users {
+        id
+        name
+        email
+        description
+        github
+        google
+        image
     }
 }

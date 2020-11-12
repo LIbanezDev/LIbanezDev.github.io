@@ -8,10 +8,10 @@ function createApolloClient() {
     return new ApolloClient({
         ssrMode: typeof window === 'undefined',
         link: new HttpLink({
-            uri: 'https://api.github.com/graphql', // Server URL (must be absolute)
+            uri: 'http://localhost:4000/graphql', // Server URL (must be absolute)
             credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
             headers: {
-                Authorization: "Bearer " + process.env.GITHUB_KEY
+                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6Ikx1Y2FzIFZlcmdhcmEgSWJhw7FleiIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjA0NzgyMDEwLCJleHAiOjE2MDUzODY4MTB9.8xHZETkM8mCQl2FX_YfrQIQ7Yu8J6y7oDUEvEGtKzyw"
             }
         }),
         cache: new InMemoryCache(),
