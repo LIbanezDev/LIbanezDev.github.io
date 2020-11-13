@@ -26,7 +26,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build
+      env:
+        PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
     - run: npm run export
+      env:
+        PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
     - run: touch ./out/.nojekyll  
       
     - name: Deploy 🚀
