@@ -3,12 +3,21 @@ import {GetStaticProps} from "next";
 import {GetMyUsersDocument, useGetMyUsersQuery} from "../generated/graphql";
 import {InitialApolloState} from "./index";
 import {initializeApollo} from "../lib/apolloClient";
+import Link from "next/link";
 
 const Users = () => {
     const {data} = useGetMyUsersQuery()
 
     return (
-        <div>
+        <div className="animate__animated animate__fadeInLeft">
+            <Link href={"/"}>
+                <a style={{marginRight: 5}}>
+                    Index
+                </a>
+            </Link>
+            <Link href={"/github"}>
+                Github
+            </Link>
             {
                 data.users.map(user => (
                     <Fragment key={user.id}>

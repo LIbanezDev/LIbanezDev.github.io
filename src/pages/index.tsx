@@ -14,15 +14,19 @@ const Index = () => {
     return (
         <div>
             <Link href={"/users"}>
-                See my app users
+                <a style={{marginRight: 5}}>
+                    Users
+                </a>
             </Link>
             <Link href={"/github"}>
-                Github
+                GitHub
             </Link>
-            {data.trendingGifs.map(gif => {
-                return <img src={gif.images.fixed_height.url} alt={gif.id} key={gif.id}/>
-            })
-            }
+            <div className="animate__animated animate__backInLeft">
+                {data.trendingGifs.map(gif => {
+                    return <img src={gif.images.fixed_height.url} alt={gif.id} key={gif.id}/>
+                })
+                }
+            </div>
         </div>
     );
 };

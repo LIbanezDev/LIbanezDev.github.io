@@ -1,5 +1,6 @@
 import React from 'react';
 import {GetStaticProps} from "next";
+import Link from "next/link";
 
 interface GithubUser {
     viewer: {
@@ -19,9 +20,17 @@ interface GithubUser {
 
 const Github = ({viewer}: { viewer: GithubUser }) => {
     return (
-        <pre>
-            {JSON.stringify(viewer, null, 4)}
-        </pre>
+        <div className="animate__animated animate__fadeInTopLeft">
+            <Link href={"/"}>
+                <a style={{marginRight: 5}}>
+                    Index
+                </a>
+            </Link>
+            <Link href={"/users"}>
+                Users
+            </Link>
+            <pre> {JSON.stringify(viewer, null, 4)} </pre>
+        </div>
     );
 };
 
