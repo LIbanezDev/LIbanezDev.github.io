@@ -16,6 +16,9 @@ const Index = () => {
             <Link href={"/users"}>
                 See my app users
             </Link>
+            <Link href={"/github"}>
+                Github
+            </Link>
             {data.trendingGifs.map(gif => {
                 return <img src={gif.images.fixed_height.url} alt={gif.id} key={gif.id}/>
             })
