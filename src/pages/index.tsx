@@ -1,44 +1,49 @@
 import React from 'react';
-import Link from "next/link";
 import {GetStaticProps} from "next";
-import {initializeApollo} from "../lib/apolloClient";
+import {InitialApolloState, initializeApollo} from "../lib/apolloClient";
 import {GetTrendingGifsDocument, useGetTrendingGifsQuery} from "../generated/graphql";
-import {NormalizedCacheObject} from "@apollo/client";
+import Layout from "../components/Layout";
 
-export interface InitialApolloState {
-    initialApolloState: NormalizedCacheObject
-}
 
 const Index = () => {
     const {data} = useGetTrendingGifsQuery()
     return (
-        <div>
-            <Link href={"/users"}>
-                <a style={{marginRight: 5}}>
-                    Users
-                </a>
-            </Link>
-            <Link href={"/github"}>
-                GitHub
-            </Link>
-            <div className="animate__animated animate__backInLeft">
+        <Layout>
+            <h1>
+                My Portfolio
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores pariatur placeat ullam voluptates. Cumque dolorum enim est
+                exercitationem illo iure laborum minima molestias nisi, nobis numquam, pariatur, porro ut.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolore, dolorem facere molestiae, natus nemo nesciunt odio perferendis quo
+                recusandae reprehenderit tempora totam. Aliquid animi consectetur cupiditate expedita laudantium pariatur!
+            </p>
+            <ol>
+                <li> Proyectos </li>
+                <li> Experiencia </li>
+                <li> Conocimientos </li>
+                <li> What more? </li>
+            </ol>
+            <div className="animate__animated animate__fadeIn">
                 {data.trendingGifs.map(gif => {
                     return <img src={gif.images.fixed_height.url} alt={gif.id} key={gif.id}/>
                 })
                 }
             </div>
-        </div>
+        </Layout>
     );
 };
+
 
 export const getStaticProps: GetStaticProps<InitialApolloState> = async () => {
     const apolloClient = initializeApollo()
     await apolloClient.query({
         query: GetTrendingGifsDocument
     })
+    const cache = apolloClient.cache.extract()
     return {
         props: {
-            initialApolloState: apolloClient.cache.extract()
+            initialApolloState: cache
         },
         revalidate: 1
     }

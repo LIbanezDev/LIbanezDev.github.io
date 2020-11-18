@@ -1,6 +1,6 @@
 import React from 'react';
 import {GetStaticProps} from "next";
-import Link from "next/link";
+import Layout from "../components/Layout";
 
 interface GithubUser {
     viewer: {
@@ -20,17 +20,11 @@ interface GithubUser {
 
 const Github = ({viewer}: { viewer: GithubUser }) => {
     return (
-        <div className="animate__animated animate__fadeInTopLeft">
-            <Link href={"/"}>
-                <a style={{marginRight: 5}}>
-                    Index
-                </a>
-            </Link>
-            <Link href={"/users"}>
-                Users
-            </Link>
-            <pre> {JSON.stringify(viewer, null, 4)} </pre>
-        </div>
+        <Layout>
+            <div className="animate__animated animate__backInUp">
+                <pre> {JSON.stringify(viewer, null, 4)} </pre>
+            </div>
+        </Layout>
     );
 };
 
