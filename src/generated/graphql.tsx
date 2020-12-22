@@ -1,7 +1,9 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -105,23 +107,19 @@ export type Mutation = {
   register: RegisterResponse;
 };
 
-
 export type MutationEnviarMensajeArgs = {
   message: Scalars['String'];
   to: Scalars['Float'];
 };
-
 
 export type MutationLoginArgs = {
   email: Scalars['String'];
   password: Scalars['String'];
 };
 
-
 export type MutationLoginWithTokenArgs = {
   data: SocialRegisterInput;
 };
-
 
 export type MutationRegisterArgs = {
   data: UserRegisterInput;
@@ -144,16 +142,13 @@ export type Query = {
   users: Array<User>;
 };
 
-
 export type QueryMyChatArgs = {
   with: Scalars['Int'];
 };
 
-
 export type QuerySearchGifsArgs = {
   query: Scalars['String'];
 };
-
 
 export type QueryTrendingGifsArgs = {
   limit?: Maybe<Scalars['Float']>;
@@ -198,7 +193,7 @@ export type User = {
 /** External auth apps like GitHub or Google */
 export enum External_Auth_Apps {
   GitHub = 'GitHub',
-  Google = 'Google'
+  Google = 'Google',
 }
 
 /** Datos necesarios para ingresar mediante una aplicacion externa como GitHub o Google */
@@ -217,53 +212,41 @@ export type UserRegisterInput = {
   password?: Maybe<Scalars['String']>;
 };
 
+export type GetTrendingGifsQueryVariables = Exact<{ [key: string]: never }>;
 
+export type GetTrendingGifsQuery = { __typename?: 'Query' } & {
+  trendingGifs?: Maybe<
+    Array<
+      { __typename?: 'Giphy' } & Pick<Giphy, 'id' | 'bitly_url'> & {
+          images: { __typename?: 'Image' } & {
+            fixed_height: { __typename?: 'FixedImage' } & Pick<FixedImage, 'height' | 'width' | 'url'>;
+          };
+        }
+    >
+  >;
+};
 
-export type GetTrendingGifsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetMyUsersQueryVariables = Exact<{ [key: string]: never }>;
 
-
-export type GetTrendingGifsQuery = (
-  { __typename?: 'Query' }
-  & { trendingGifs?: Maybe<Array<(
-    { __typename?: 'Giphy' }
-    & Pick<Giphy, 'id' | 'bitly_url'>
-    & { images: (
-      { __typename?: 'Image' }
-      & { fixed_height: (
-        { __typename?: 'FixedImage' }
-        & Pick<FixedImage, 'height' | 'width' | 'url'>
-      ) }
-    ) }
-  )>> }
-);
-
-export type GetMyUsersQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetMyUsersQuery = (
-  { __typename?: 'Query' }
-  & { users: Array<(
-    { __typename?: 'User' }
-    & Pick<User, 'id' | 'name' | 'email' | 'description' | 'github' | 'google' | 'image'>
-  )> }
-);
-
+export type GetMyUsersQuery = { __typename?: 'Query' } & {
+  users: Array<{ __typename?: 'User' } & Pick<User, 'id' | 'name' | 'email' | 'description' | 'github' | 'google' | 'image'>>;
+};
 
 export const GetTrendingGifsDocument = gql`
-    query getTrendingGifs {
-  trendingGifs {
-    id
-    bitly_url
-    images {
-      fixed_height {
-        height
-        width
-        url
+  query getTrendingGifs {
+    trendingGifs {
+      id
+      bitly_url
+      images {
+        fixed_height {
+          height
+          width
+          url
+        }
       }
     }
   }
-}
-    `;
+`;
 
 /**
  * __useGetTrendingGifsQuery__
@@ -280,28 +263,32 @@ export const GetTrendingGifsDocument = gql`
  *   },
  * });
  */
-export function useGetTrendingGifsQuery(baseOptions?: Apollo.QueryHookOptions<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>) {
-        return Apollo.useQuery<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>(GetTrendingGifsDocument, baseOptions);
-      }
-export function useGetTrendingGifsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>) {
-          return Apollo.useLazyQuery<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>(GetTrendingGifsDocument, baseOptions);
-        }
+export function useGetTrendingGifsQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>
+) {
+  return Apollo.useQuery<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>(GetTrendingGifsDocument, baseOptions);
+}
+export function useGetTrendingGifsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>
+) {
+  return Apollo.useLazyQuery<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>(GetTrendingGifsDocument, baseOptions);
+}
 export type GetTrendingGifsQueryHookResult = ReturnType<typeof useGetTrendingGifsQuery>;
 export type GetTrendingGifsLazyQueryHookResult = ReturnType<typeof useGetTrendingGifsLazyQuery>;
 export type GetTrendingGifsQueryResult = Apollo.QueryResult<GetTrendingGifsQuery, GetTrendingGifsQueryVariables>;
 export const GetMyUsersDocument = gql`
-    query getMyUsers {
-  users {
-    id
-    name
-    email
-    description
-    github
-    google
-    image
+  query getMyUsers {
+    users {
+      id
+      name
+      email
+      description
+      github
+      google
+      image
+    }
   }
-}
-    `;
+`;
 
 /**
  * __useGetMyUsersQuery__
@@ -319,11 +306,11 @@ export const GetMyUsersDocument = gql`
  * });
  */
 export function useGetMyUsersQuery(baseOptions?: Apollo.QueryHookOptions<GetMyUsersQuery, GetMyUsersQueryVariables>) {
-        return Apollo.useQuery<GetMyUsersQuery, GetMyUsersQueryVariables>(GetMyUsersDocument, baseOptions);
-      }
+  return Apollo.useQuery<GetMyUsersQuery, GetMyUsersQueryVariables>(GetMyUsersDocument, baseOptions);
+}
 export function useGetMyUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMyUsersQuery, GetMyUsersQueryVariables>) {
-          return Apollo.useLazyQuery<GetMyUsersQuery, GetMyUsersQueryVariables>(GetMyUsersDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<GetMyUsersQuery, GetMyUsersQueryVariables>(GetMyUsersDocument, baseOptions);
+}
 export type GetMyUsersQueryHookResult = ReturnType<typeof useGetMyUsersQuery>;
 export type GetMyUsersLazyQueryHookResult = ReturnType<typeof useGetMyUsersLazyQuery>;
 export type GetMyUsersQueryResult = Apollo.QueryResult<GetMyUsersQuery, GetMyUsersQueryVariables>;

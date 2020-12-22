@@ -1,25 +1,25 @@
 query getTrendingGifs {
-    trendingGifs {
-        id
-        bitly_url
-        images{
-            fixed_height {
-                height
-                width
-                url
-            }
-        }
+  trendingGifs {
+    id
+    bitly_url
+    images {
+      fixed_height {
+        height
+        width
+        url
+      }
     }
+  }
 }
 
 query getMyUsers {
-    users {
-        id
-        name
-        email
-        description
-        github
-        google
-        image
-    }
+  users {
+    id
+    name
+    email
+    description
+    github
+    google
+    image
+  }
 }
