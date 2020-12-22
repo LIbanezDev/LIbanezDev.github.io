@@ -9,7 +9,7 @@ const Index = () => {
   const { data } = useGetTrendingGifsQuery();
   return (
     <Layout>
-      <h1>My Portfolio</h1>
+      <h1>Lucas Ignacio</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores pariatur placeat ullam voluptates. Cumque
         dolorum enim est exercitationem illo iure laborum minima molestias nisi, nobis numquam, pariatur, porro ut. Lorem ipsum
