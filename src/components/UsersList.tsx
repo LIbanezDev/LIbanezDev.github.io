@@ -5,7 +5,7 @@ const UsersList = () => {
   const { data } = useGetMyUsersQuery();
   return (
     <div className='animate__animated animate__fadeIn'>
-      {data.users.map(user => (
+      {data.users.items.map(user => (
         <Fragment key={user.id}>
           <h2> {user.name} </h2>
           <p> {user.description} </p>
