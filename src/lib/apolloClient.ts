@@ -3,14 +3,38 @@ import { ApolloClient, HttpLink, InMemoryCache, NormalizedCacheObject } from '@a
 
 let apolloClient;
 
+export const mergePaginatedData = (existing, incoming) => {
+  // Slicing is necessary because the existing data is
+  // immutable, and frozen in development.
+  const repo = 'repositories({"after":null,"first":10,"isFork":false,"privacy":"PUBLIC"})';
+  const merged = existing ? existing.repositories.nodes.items.slice(0) : [];
+  for (let i = 0; i < incoming[repo].nodes.length; ++i) {
+    merged[existing ? existing.repositories.nodes.length + i : i] = incoming[repo].nodes[i];
+  }
+  return { ...incoming, items: merged };
+};
+
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'https://social-todos-graph.herokuapp.com/graphql', // Server URL (must be absolute)
-      credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+      uri: 'https://api.github.com/graphql', // Server URL (must be absolute)
+      headers: {
+        Authorization: 'Bearer ' + process.env.PERSONAL_API_TOKEN,
+      },
     }),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            viewer: {
+              keyArgs: [],
+              merge: mergePaginatedData,
+            },
+          },
+        },
+      },
+    }),
   });
 }
 

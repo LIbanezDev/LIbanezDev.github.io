@@ -1,15 +1,46 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import { InitialApolloState, initializeApollo } from '../lib/apolloClient';
-import { GetTrendingGifsDocument, useGetTrendingGifsQuery } from '../generated/graphql';
 import Layout from '../components/Layout';
+import a from 'next/link';
 import Link from 'next/link';
+import { useQuery } from '@apollo/client';
+import { GetGithubInfo, GithubInfo } from '../utils/queries';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Index = () => {
-  const { data } = useGetTrendingGifsQuery();
+  const { data, fetchMore } = useQuery<GithubInfo>(GetGithubInfo, {
+    variables: {
+      after: null,
+    },
+  });
+
+  /*const fetchMoreRepositories = async () => {
+    await fetchMore({
+      variables: {
+        after: data.viewer.repositories.pageInfo.endCursor,
+      },
+    });
+  };*/
+
   return (
     <Layout>
       <h1>Lucas Ignacio</h1>
+      <a href={'https://github.com/Fromiti'} target={'_blank'}>
+        <button className='btn' style={{ marginRight: 5 }}>
+          <i className='fa fa-github' />
+        </button>
+      </a>
+      <a href={'https://www.linkedin.com/in/lucas-vergara-iba%C3%B1ez-b22673166/'} target={'_blank'}>
+        <button className='btn' style={{ marginRight: 5 }}>
+          <i className='fa fa-linkedin' />
+        </button>
+      </a>
+      <a href={'https://twitter.com/LIbanez'} target={'_blank'}>
+        <button className='btn' style={{ marginRight: 5 }}>
+          <i className='fa fa-twitter' />
+        </button>
+      </a>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores pariatur placeat ullam voluptates. Cumque
         dolorum enim est exercitationem illo iure laborum minima molestias nisi, nobis numquam, pariatur, porro ut. Lorem ipsum
@@ -24,12 +55,25 @@ const Index = () => {
           <li> Proyectos</li>
         </Link>
         <li> Conocimientos</li>
-        <li> What more?</li>
       </ol>
-      <div className='animate__animated animate__fadeIn'>
-        {data.trendingGifs.map(gif => {
-          return <img src={gif.images.fixed_height.url} alt={gif.id} key={gif.id} />;
-        })}
+      <h2> Proyectos Personales... </h2>
+      <div className={'animate__animated animate__fadeIn'}>
+        <ul style={{ overflowY: 'scroll', height: '600px' }}>
+          {/*<InfiniteScroll
+            dataLength={data.viewer.repositories.nodes.length}
+            next={fetchMoreRepositories}
+            hasMore={data.viewer.repositories.pageInfo.hasNextPage}
+            loader={'<p> Loading... </p>'}
+          >
+          </InfiniteScroll>*/}
+          {data.viewer.repositories.nodes.map(repo => (
+            <li key={repo.url}>
+              <a href={repo.url} target={'_blank'}>
+                {repo.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </Layout>
   );
@@ -38,7 +82,10 @@ const Index = () => {
 export const getStaticProps: GetStaticProps<InitialApolloState> = async () => {
   const apolloClient = initializeApollo();
   await apolloClient.query({
-    query: GetTrendingGifsDocument,
+    query: GetGithubInfo,
+    variables: {
+      after: null,
+    },
   });
   const cache = apolloClient.cache.extract();
   return {
