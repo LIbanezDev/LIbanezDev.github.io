@@ -56,7 +56,7 @@ const Index = () => {
         </Link>
         <li> Conocimientos</li>
       </ol>
-      <h2> Proyectos Personales... </h2>
+      <h2> Proyectos de Github... </h2>
       <div className={'animate__animated animate__fadeIn'}>
         <ul style={{ overflowY: 'scroll', height: '600px' }}>
           {/*<InfiniteScroll

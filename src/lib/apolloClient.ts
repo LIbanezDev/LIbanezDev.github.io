@@ -6,7 +6,7 @@ let apolloClient;
 export const mergePaginatedData = (existing, incoming) => {
   // Slicing is necessary because the existing data is
   // immutable, and frozen in development.
-  const repo = 'repositories({"after":null,"first":10,"isFork":false,"privacy":"PUBLIC"})';
+  const repo = 'repositories({"after":null,"first":40,"isFork":false,"privacy":"PUBLIC"})';
   const merged = existing ? existing.repositories.nodes.items.slice(0) : [];
   for (let i = 0; i < incoming[repo].nodes.length; ++i) {
     merged[existing ? existing.repositories.nodes.length + i : i] = incoming[repo].nodes[i];
