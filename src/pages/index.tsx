@@ -33,20 +33,21 @@ const Index = () => {
         </a>
       </div>
       <div>
-        <h4> Presentación </h4>
+        <h3> Presentación </h3>
         <p>
-          Estudiante de Informática, 20 años, Santiago de Chile. <br />
-          Cuento con mucha motivación para aprender cosas nuevas relacionadas con la tecnología, lo cual lo plasmo desarrollando
-          proyectos que signifiquen un desafio para mi carrera como desarrollador de Software. <br />
+          Estudiante de Informática, 20 años, Santiago de Chile <br />
+          Tengo mucha motivación para aprender nuevas tecnologías, lo cual lo plasmo desarrollando proyectos que signifiquen un
+          desafio para mi carrera como desarrollador de software. <br />
           Llevo aproximadamente 1 año desarrollando en la web, en mis primeros meses utilizaba PHP como lenguaje primario y uno de
-          sus Frameworks principales llamado Laravel, con estos construí un sitio para subir material de estudio para los ramos de
-          las carreras en mi Universidad. <br />
+          sus Frameworks Laravel, con estos construí un sitio para subir material de estudio para los ramos de las carreras en mi
+          Universidad. <br />
           Desde hace 6 meses estoy utilizando Typescript como lenguaje primario, ya que lo utilizo tanto para el desarrollo en la
-          web como en el servidor, en el cliente con ReactJS y su Framework NextJS, y en el servidor el Framework NestJS con GraphQL.
+          web como en el servidor, en el cliente con ReactJS y su Framework NextJS, y en el servidor el Framework NestJS con
+          GraphQL.
         </p>
       </div>
       <div>
-        <h4> Conocimientos </h4>
+        <h3> Conocimientos </h3>
         <ul>
           <li> HTML, Javascript y Typescript </li>
           <li> Node con Express </li>
@@ -58,7 +59,7 @@ const Index = () => {
         </ul>
       </div>
       <div>
-        <h4> Proyectos </h4>
+        <h3> Proyectos </h3>
         <div className={'animate__animated animate__fadeIn'}>
           <ul>
             {data.viewer.repositories.nodes.map(repo => (
@@ -72,9 +73,13 @@ const Index = () => {
         </div>
       </div>
       <div>
-        <h4> Contacto... </h4>
+        <h3> Contacto... </h3>
         <form onSubmit={sendContact}>
-          <input placeholder={'Input Element'} />
+          <input placeholder={'Nombre o Correo'} />
+          <input placeholder={'Mensaje'} />
+          <button type={'submit'}>
+            Enviar
+          </button>
         </form>
       </div>
     </Layout>
