@@ -23,11 +23,11 @@ export interface GithubInfo {
 }
 
 export const GetGithubInfo = gql`
-  query($after: String) {
+  query {
     viewer {
       login
       avatarUrl
-      repositories(first: 40, isFork: false, privacy: PUBLIC, after: $after) {
+      repositories(first: 60, isFork: false, privacy: PUBLIC) {
         pageInfo {
           endCursor
           hasNextPage
