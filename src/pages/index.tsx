@@ -14,9 +14,9 @@ const Index = () => {
   };
   return (
     <Layout description={'Yeah'}>
-      <h1>Lucas Ignacio Vergara </h1>
+      <h1> Lucas Vergara Ibañez </h1>
       <div>
-        <a href={'https://github.com/Fromiti'} target={'_blank'}>
+        <a href={'https://github.com/LIbanezDev'} target={'_blank'}>
           <button className='btn' style={{ marginRight: 5 }}>
             <i className='fa fa-github' />
           </button>
@@ -26,9 +26,9 @@ const Index = () => {
             <i className='fa fa-linkedin' />
           </button>
         </a>
-        <a href={'https://twitter.com/LIbanez'} target={'_blank'}>
+        <a href={'/CV_Lucas_Vergara.pdf'} download>
           <button className='btn' style={{ marginRight: 5 }}>
-            <i className='fa fa-twitter' />
+            <i className='fas fa-address-book' />
           </button>
         </a>
       </div>
@@ -49,26 +49,32 @@ const Index = () => {
       <div>
         <h3> Conocimientos </h3>
         <ul>
-          <li> HTML, Javascript y Typescript </li>
-          <li> Node con Express </li>
-          <li> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL </li>
-          <li> GraphQL </li>
-          <li> NestJS </li>
-          <li> React </li>
-          <li> NextJS </li>
+          <li> HTML, Javascript y Typescript</li>
+          <li> Node con Express</li>
+          <li> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL</li>
+          <li> GraphQL</li>
+          <li> NestJS</li>
+          <li> React</li>
+          <li> NextJS</li>
         </ul>
       </div>
       <div>
         <h3> Proyectos </h3>
         <div className={'animate__animated animate__fadeIn'}>
           <ul>
-            {data.viewer.repositories.nodes.map(repo => (
-              <li key={repo.url}>
-                <a href={repo.url} target={'_blank'}>
-                  {repo.name}
-                </a>
-              </li>
-            ))}
+            {data.viewer.repositories.nodes
+              .filter(repo => repo.homepageUrl != null && repo.homepageUrl != '')
+              .map(repo => (
+                <li key={repo.url}>
+                  <a href={repo.url} target={'_blank'}>
+                    {repo.name}
+                  </a>
+                  <br />
+                  <a href={repo.homepageUrl} target={'_blank'}>
+                    Homepage
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
@@ -77,9 +83,7 @@ const Index = () => {
         <form onSubmit={sendContact}>
           <input placeholder={'Nombre o Correo'} />
           <input placeholder={'Mensaje'} />
-          <button type={'submit'}>
-            Enviar
-          </button>
+          <button type={'submit'}>Enviar</button>
         </form>
       </div>
     </Layout>

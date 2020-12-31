@@ -13,6 +13,7 @@ export interface GithubInfo {
       };
       nodes: Array<{
         name: string;
+        homepageUrl: string;
         openGraphImageUrl: string;
         descriptionHTML: string;
         createdAt: string;
