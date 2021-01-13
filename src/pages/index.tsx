@@ -15,20 +15,21 @@ const Index = () => {
   return (
     <Layout description={'Yeah'}>
       <h1> Lucas Vergara Ibañez </h1>
+      <h3> En construcción... </h3>
       <div>
         <a href={'https://github.com/LIbanezDev'} target={'_blank'}>
           <button className='btn' style={{ marginRight: 5 }}>
             <i className='fa fa-github' />
           </button>
         </a>
-        <a href={'https://www.linkedin.com/in/lucas-vergara-iba%C3%B1ez-b22673166/'} target={'_blank'}>
+        <a href={'https://www.linkedin.com/in/lucas-ignacio-vergara-iba%C3%B1ez-b22673166/'} target={'_blank'}>
           <button className='btn' style={{ marginRight: 5 }}>
             <i className='fa fa-linkedin' />
           </button>
         </a>
         <a href={'/CV_Lucas_Vergara.pdf'} download>
           <button className='btn' style={{ marginRight: 5 }}>
-            <i className='fas fa-address-book' />
+            <i className='fas fa-file' />
           </button>
         </a>
       </div>
@@ -53,9 +54,9 @@ const Index = () => {
           <li> Node con Express</li>
           <li> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL</li>
           <li> GraphQL</li>
-          <li> NestJS</li>
           <li> React</li>
-          <li> NextJS</li>
+          <li> Nextjs</li>
+          <li> Nestjs</li>
         </ul>
       </div>
       <div>
@@ -93,14 +94,14 @@ const Index = () => {
 export const getStaticProps: GetStaticProps<InitialApolloState> = async () => {
   const apolloClient = initializeApollo();
   await apolloClient.query({
-    query: GetGithubInfo,
+    query: GetGithubInfo
   });
   const cache = apolloClient.cache.extract();
   return {
     props: {
-      initialApolloState: cache,
+      initialApolloState: cache
     },
-    revalidate: 1,
+    revalidate: 1
   };
 };
 
