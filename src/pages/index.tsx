@@ -5,6 +5,16 @@ import Layout from '../components/Layout';
 import a from 'next/link';
 import { useQuery } from '@apollo/client';
 import { GetGithubInfo, GithubInfo } from '../utils/queries';
+import styled from 'styled-components';
+
+const Conocimiento = styled.li`
+  font-size: 18px;
+`;
+
+const Presentacion = styled.p`
+  font-size: 21px;
+  text-align: justify;
+`;
 
 const Index = () => {
   const { data } = useQuery<GithubInfo>(GetGithubInfo);
@@ -35,7 +45,7 @@ const Index = () => {
       </div>
       <div>
         <h3> Presentación </h3>
-        <p>
+        <Presentacion>
           Estudiante de Informática, 20 años, Santiago de Chile <br />
           Tengo mucha motivación para aprender nuevas tecnologías, lo cual lo plasmo desarrollando proyectos que signifiquen un
           desafio para mi carrera como desarrollador de software. <br />
@@ -43,20 +53,21 @@ const Index = () => {
           sus Frameworks Laravel, con estos construí un sitio para subir material de estudio para los ramos de las carreras en mi
           Universidad. <br />
           Desde hace 6 meses estoy utilizando Typescript como lenguaje primario, ya que lo utilizo tanto para el desarrollo en la
-          web como en el servidor, en el cliente con ReactJS y su Framework NextJS, y en el servidor el Framework NestJS con
-          GraphQL.
-        </p>
+          web como en el servidor, en el cliente con React y su Framework NextJS , y en el servidor el Framework NestJS con
+          GraphQL. <br />
+          Cuento con conocimientos en arquitectura orientada a microservicios y Docker como herramienta de construcción de contenedores.
+        </Presentacion>
       </div>
       <div>
         <h3> Conocimientos </h3>
         <ul>
-          <li> HTML, Javascript y Typescript</li>
-          <li> Node con Express</li>
-          <li> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL</li>
-          <li> GraphQL</li>
-          <li> React</li>
-          <li> Nextjs</li>
-          <li> Nestjs</li>
+          <Conocimiento> Node con Express</Conocimiento>
+          <Conocimiento> HTML, Javascript y Typescript</Conocimiento>
+          <Conocimiento> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL</Conocimiento>
+          <Conocimiento> GraphQL</Conocimiento>
+          <Conocimiento> React</Conocimiento>
+          <Conocimiento> Nextjs</Conocimiento>
+          <Conocimiento> Nestjs</Conocimiento>
         </ul>
       </div>
       <div>
