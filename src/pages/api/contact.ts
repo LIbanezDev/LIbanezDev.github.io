@@ -5,6 +5,7 @@ import initMiddleware from './initMiddleware';
 
 const mailer = createTransport({
   service: process.env.EMAIL_SERVICE,
+  secure: process.env.NODE_ENV === 'production',
   auth: {
     user: process.env.EMAIL_ADDRESS,
     pass: process.env.EMAIL_PASS
