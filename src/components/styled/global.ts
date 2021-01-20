@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  margin: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
   overflow: hidden;
 `;
