@@ -27,7 +27,7 @@ const Index = () => {
 
   const sendContact = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    fetch('/api/contact', {
+    fetch('https://lucasignacio.me/api/contact', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify(formData)
