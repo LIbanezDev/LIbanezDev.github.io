@@ -20,7 +20,6 @@ const Layout: FC<LayoutProps> = ({ children, title }) => {
         <title> {title || 'Lucas Vergara Ibañez'} </title>
         <link rel='icon' type='image/jpg' href={'cat_moon.jpg'} />
       </Head>
-      <Header />
       <GlobalStyle />
       <Container>
         <main>{children}</main>
