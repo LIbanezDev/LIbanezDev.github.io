@@ -1,25 +1,26 @@
 import React, { FormEvent, useState } from 'react';
+import { GLOBAL_VARS } from '../config/default';
 
 const Contact = () => {
 
   const [formData, setFormData] = useState({
     email: '',
-    msg: '',
+    msg: ''
   });
 
   const handleFormDataChange = evt => {
     setFormData(prev => ({
       ...prev,
-      [evt.target.name]: evt.target.value,
+      [evt.target.name]: evt.target.value
     }));
   };
 
   const sendContact = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    fetch('https://lucasignacio.me/api/contact', {
+    fetch(GLOBAL_VARS.APP_URL + '/api/contact', {
       method: 'POST',
       credentials: 'same-origin',
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData)
     })
       .then(res => res.json())
       .then(data => {
@@ -38,7 +39,7 @@ const Contact = () => {
           value={formData.email}
           onChange={handleFormDataChange}
           placeholder={'Nombre o Correo'}
-        />{' '}
+        />
         <br />
         <label htmlFor={'emailForm'}> Mensaje </label> <br />
         <textarea name='msg' id={'msgForm'} value={formData.msg} onChange={handleFormDataChange} /> <br />

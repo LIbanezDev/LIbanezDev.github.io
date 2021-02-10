@@ -25,12 +25,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await cors(req, res);
   if (req.method === 'POST') {
     const { email, msg } = JSON.parse(req.body);
-    mailer.sendMail({
+    const k = await mailer.sendMail({
       from: process.env.EMAIL_ADDRESS,
       to: 'lucas.vergara@usm.cl',
       subject: 'Contacto desde portafolio',
       html: `<p> Emisor: <strong> ${email} </strong> <br/> ${msg} </p>`
     });
+    console.log(k);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.json({ msg: 'Mensaje Enviado' });
