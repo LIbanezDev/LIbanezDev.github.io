@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from 'react';
-import { GLOBAL_VARS } from '../config/default';
 
 const Contact = () => {
 
@@ -17,7 +16,7 @@ const Contact = () => {
 
   const sendContact = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    fetch(GLOBAL_VARS.APP_URL + '/api/contact', {
+    fetch(process.env.NEXT_PUBLIC_URL + '/api/contact', {
       method: 'POST',
       credentials: 'same-origin',
       body: JSON.stringify(formData)
