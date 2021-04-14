@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from 'react';
+import {Button} from 'react-bootstrap';
 
 const Contact = () => {
 
@@ -42,7 +43,7 @@ const Contact = () => {
         <br />
         <label htmlFor={'emailForm'}> Mensaje </label> <br />
         <textarea name='msg' id={'msgForm'} value={formData.msg} onChange={handleFormDataChange} /> <br />
-        <button type={'submit'}>Enviar</button>
+        <Button type={'submit'}>Enviar</Button>
       </form>
     </div>
   );

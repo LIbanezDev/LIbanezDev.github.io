@@ -10,7 +10,6 @@ const Presentation = () => {
     <div>
       <h3> Presentación </h3>
         <Presentacion>
-          Estudiante de Informática, 20 años, Santiago de Chile <br />
           Llevo aproximadamente 1 año desarrollando en la web, en mis primeros meses utilizaba PHP como lenguaje primario y uno de
           sus Frameworks Laravel, con estos construí un sitio para subir material de estudio para los ramos de las carreras en mi
           Universidad. <br />

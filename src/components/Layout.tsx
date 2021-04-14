@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import Header from './Header';
 import Head from 'next/head';
-import { Container, GlobalStyle } from './styled/global';
+import { Container } from 'react-bootstrap';
 
 interface LayoutProps {
   title?: string;
@@ -10,7 +9,7 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children, title }) => {
   return (
-    <div>
+    <>
       <Head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' key='viewport' />
@@ -20,11 +19,10 @@ const Layout: FC<LayoutProps> = ({ children, title }) => {
         <title> {title || 'Lucas Vergara Ibañez'} </title>
         <link rel='icon' type='image/jpg' href={'cat_moon.jpg'} />
       </Head>
-      <GlobalStyle />
       <Container>
         <main>{children}</main>
       </Container>
-    </div>
+    </>
   );
 };
 

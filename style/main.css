@@ -1,0 +1,47 @@
+/* ensure all pages have Bootstrap CSS */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+body {
+    font-family: Inter, serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 23px;
+}
+
+li {
+    font-size: 23px;
+}
+
+.md-container {
+    max-width: 800px;
+    padding-top: 2rem;
+}
+
+.sml-card {
+    width: 22rem;
+    margin: 1rem 0;
+}
+
+.cntr-footer {
+    height: 80px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+}
+
+.sml-logo {
+    height: 1em;
+    margin-left: 10px;
+}
