@@ -7,7 +7,7 @@ El código fuente de mi portafolio.
 * Next js
 * Styled Components
 
-## Usage
+## Uso
 
 ```bash
 npm install
