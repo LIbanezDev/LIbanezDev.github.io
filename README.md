@@ -4,8 +4,8 @@ El código fuente de mi portafolio.
 
 ## Tecnologías utilizadas
 
-* Next js
-* Styled Components
+- Next js
+- Styled Components
 
 ## Uso
 

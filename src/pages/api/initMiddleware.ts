@@ -3,11 +3,11 @@
 export default function initMiddleware(middleware) {
   return (req, res) =>
     new Promise((resolve, reject) => {
-      middleware(req, res, (result) => {
+      middleware(req, res, result => {
         if (result instanceof Error) {
-          return reject(result)
+          return reject(result);
         }
-        return resolve(result)
-      })
-    })
+        return resolve(result);
+      });
+    });
 }

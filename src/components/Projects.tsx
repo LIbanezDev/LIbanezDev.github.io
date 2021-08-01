@@ -1,11 +1,16 @@
 import React from 'react';
+import { SectionTitle } from './styled/shared';
+import { ListItem } from './Skills';
 
 const Projects = () => {
   return (
     <div>
-      <h3> Proyectos </h3>
+      <SectionTitle> Proyectos </SectionTitle>
       <div className={'animate__animated animate__fadeIn'}>
         <ul>
+          <ListItem> Material USM </ListItem>
+          <ListItem> Fakebook </ListItem>
+          <ListItem> Social Todos </ListItem>
         </ul>
       </div>
     </div>

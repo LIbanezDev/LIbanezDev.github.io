@@ -1,19 +1,25 @@
 import React from 'react';
+import { SectionTitle } from './styled/shared';
+import styled from 'styled-components';
+
+export const ListItem = styled.li`
+  font-size: 22px;
+`;
 
 const Skills = () => {
   return (
     <div>
-        <h3> Conocimientos </h3>
-        <ul>
-          <li> Node con Express</li>
-          <li> HTML, Javascript y Typescript</li>
-          <li> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL</li>
-          <li> GraphQL</li>
-          <li> Nestjs</li>
-          <li> Docker</li>
-          <li> Google Cloud Platform</li>
-        </ul>
-      </div>
+      <SectionTitle> Conocimientos </SectionTitle>
+      <ul>
+        <ListItem> Node con Express</ListItem>
+        <ListItem> HTML, Javascript y Typescript</ListItem>
+        <ListItem> Lenguaje SQL y gestores de bases de datos relacionales: MySQL & PostgreSQL</ListItem>
+        <ListItem> GraphQL</ListItem>
+        <ListItem> Nestjs</ListItem>
+        <ListItem> Docker</ListItem>
+        <ListItem> Google Cloud Platform</ListItem>
+      </ul>
+    </div>
   );
 };
 

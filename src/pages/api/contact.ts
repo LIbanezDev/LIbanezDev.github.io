@@ -8,11 +8,11 @@ const mailer = createTransport({
   secure: process.env.NODE_ENV === 'production',
   auth: {
     user: process.env.EMAIL_ADDRESS,
-    pass: process.env.EMAIL_PASS
+    pass: process.env.EMAIL_PASS,
   },
   tls: {
-    ciphers: 'SSLv3'
-  }
+    ciphers: 'SSLv3',
+  },
 });
 
 const cors = initMiddleware(
@@ -20,7 +20,7 @@ const cors = initMiddleware(
   Cors({
     credentials: true,
     origin: 'same-origin',
-    methods: ['POST']
+    methods: ['POST'],
   })
 );
 
@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       from: process.env.EMAIL_ADDRESS,
       to: 'lucas.vergara@usm.cl',
       subject: 'Contacto desde portafolio',
-      html: `<p> Emisor: <strong> ${email} </strong> <br/> ${msg} </p>`
+      html: `<p> Emisor: <strong> ${email} </strong> <br/> ${msg} </p>`,
     });
     console.log(k);
     res.statusCode = 200;

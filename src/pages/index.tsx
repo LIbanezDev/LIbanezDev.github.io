@@ -12,6 +12,7 @@ const Index = () => {
       <header>
         <Header />
       </header>
+      <br />
       <main>
         <Presentation />
         <Skills />
@@ -23,6 +24,5 @@ const Index = () => {
     </Layout>
   );
 };
-
 
 export default Index;

@@ -1,17 +1,17 @@
 import React, { FormEvent, useState } from 'react';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { SectionTitle } from './styled/shared';
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     email: '',
-    msg: ''
+    msg: '',
   });
 
   const handleFormDataChange = evt => {
     setFormData(prev => ({
       ...prev,
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     }));
   };
 
@@ -20,7 +20,7 @@ const Contact = () => {
     fetch(process.env.NEXT_PUBLIC_URL + '/api/contact', {
       method: 'POST',
       credentials: 'same-origin',
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     })
       .then(res => res.json())
       .then(data => {
@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <div>
-      <h3> Contacto... </h3>
+      <SectionTitle> Contacto... </SectionTitle>
       <form onSubmit={sendContact}>
         <label htmlFor={'emailForm'}> Información de emisor </label> <br />
         <input
