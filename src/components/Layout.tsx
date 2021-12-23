@@ -16,8 +16,8 @@ const Layout: FC<LayoutProps> = ({ children, title }) => {
         <meta name='description' content='Portafolio de Lucas Ignacio Vergara Ibañez' />
         <meta name='keywords' content='portafolio, portfolio, resume, software development.' />
         <meta name='author' content='Lucas Vergara Ibañez' />
-        <title> {title || 'Lucas Vergara Ibañez'} </title>
-        <link rel='icon' type='image/jpg' href={'cat_moon.jpg'} />
+        <title> {title || 'Inicio - Portafolio'} </title>
+        <link rel='icon' href={'favicon.ico'} />
       </Head>
       <Container>
         <main>{children}</main>
