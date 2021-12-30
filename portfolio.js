@@ -27,13 +27,13 @@ export const socialLinks = {
 export const skillsSection = {
 	title: "Que Utilizo",
 	subTitle:
-		"CON ESTAS TECNOLOGÍAS REALIZO DIVERSOS PROYECTOS. PRINCIPALMENTE EN LA WEB.",
+		"CON ESTAS TECNOLOGÍAS REALIZO DIVERSOS PROYECTOS.",
 	skills: [
 		emoji(
 			"⚡ Desarrollo de interfaces de comunicación REST y GraphQL"
 		),
 		emoji(
-			"⚡ Construcción de bases de datos relacionales a través de lenguaje SQL o utilizando orm (Eloquent, TypeORM, Sequilize, etc)"
+			"⚡ Construcción de bases de datos relacionales a través de lenguaje SQL o utilizando orm (Eloquent, TypeORM, Sequelize, etc)"
 		),
 		emoji(
 			"⚡ Conexión del cliente con el servidor utilizando javascript vanilla o librerias como react y vuejs."
