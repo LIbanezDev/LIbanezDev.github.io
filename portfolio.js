@@ -129,7 +129,7 @@ export const educationInfo = [
 		desc: "Formación en desarrollo de software desde su plánificación hasta su implementación, " +
 			"también en diversos tópicos como la matemática, educación fisica y humanidades.",
 		descBullets: [
-			"Egresado, a portas de realizar práctica profesional.",
+			"Egresado, en busca de un lugar donde realizar la práctica profesional.",
 		],
 	},
 ];
