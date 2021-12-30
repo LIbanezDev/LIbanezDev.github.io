@@ -5,7 +5,7 @@ El código fuente de mi portafolio.
 ## Tecnologías utilizadas
 
 - Next js
-- Styled Components
+- Bootstrap
 
 ## Uso
 
