@@ -129,9 +129,18 @@ export const educationInfo = [
 		desc: "Formación en desarrollo de software desde su plánificación hasta su implementación, " +
 			"también en diversos tópicos como la matemática, educación fisica y humanidades.",
 		descBullets: [
-			"Egresado, realizando práctica profesional en Kuantum SpA. Tareas de desarrollo utilizando tecnologías como Symfony, PostgreSQL y Docker.",
+			"Tareas de desarrollo utilizando tecnologías como Symfony, PostgreSQL y Docker.",
 		],
 	},
+	{
+		schoolName: "Universidad Técnica Federico Santa María",
+		subHeader: "Ingenieria de Ejecución en Software",
+		duration: "Marzo 2022 - Actual",
+		desc: "Ejerciendo como programador y estudiando sobre el desarrollo enfocado en el área menos técnica.",
+		descBullets: [
+			"Practica realizada."
+		],
+	}
 ];
 
 export const experience = [
