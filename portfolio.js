@@ -137,9 +137,6 @@ export const educationInfo = [
 		subHeader: "Ingenieria de Ejecución en Software",
 		duration: "Marzo 2022 - Actual",
 		desc: "Ejerciendo como programador y estudiando sobre el desarrollo enfocado en el área menos técnica.",
-		descBullets: [
-			"Practica realizada."
-		],
 	}
 ];
 
