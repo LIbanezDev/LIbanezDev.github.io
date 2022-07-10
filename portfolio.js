@@ -117,10 +117,6 @@ export const educationInfo = [
 		subHeader: "Tecnico de nivel medio en Telecomunicaciones",
 		duration: "Marzo 2016 - Marzo 2018",
 		desc: "Formación en area de redes a través de cursos oficiales de Cisco (CCNA 1, CCNA 2) y construccion de computadores (It Essentials).",
-		descBullets: [
-			"Primer Lugar promoción 2018.",
-			"Practica realizada.",
-		],
 	},
 	{
 		schoolName: "Universidad Técnica Federico Santa María",
@@ -128,9 +124,6 @@ export const educationInfo = [
 		duration: "Marzo 2020 - Marzo 2022",
 		desc: "Formación en desarrollo de software desde su plánificación hasta su implementación, " +
 			"también en diversos tópicos como la matemática, educación fisica y humanidades.",
-		descBullets: [
-			"Tareas de desarrollo utilizando tecnologías como Symfony, PostgreSQL y Docker.",
-		],
 	},
 	{
 		schoolName: "Universidad Técnica Federico Santa María",
