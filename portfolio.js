@@ -2,13 +2,12 @@ import emoji from "react-easy-emoji";
 
 export const greetings = {
 	name: "Lucas Ignacio Vergara",
-	title: "Hola a todos",
+	title: "Bienvenidos",
 	description:
-		"Llevo aproximadamente 2 años desarrollando en la web y estudiando en la Universidad, empecé utilizando PHP y luego uno de sus" +
-		" Frameworks Laravel, " +
-		" con estos construí un sitio para subir material de estudio de mi carrera. \n" +
-		"Tengo acercamiento a muchas tecnologías tanto del lado del servidor como del cliente.\n" +
-		"Actualmente me estoy formando sobre arquitectura orientada a microservicios y Docker como herramienta de construcción de contenedores.\n",
+		"Tengo 6 meses de experiencia en el desarrollo y más de 3 años en formación individual y académica. Me gusta idear e implementar soluciones a través del desarrollo" +
+		" de software, y aunque me ha tocado" +
+		" trabajar tanto en el Frontend como Backend, mi fuerte es el desarrollo en el lado del servidor. Dominio en tecnologías como .NET, Symfony, SQL Server y ReactJS. Soy" +
+		" un apasionado por el desarrollo y aquello me motiva dia a dia para entregar las mejores soluciones.",
 	resumeLink: "https://lucasign.me/CV_Lucas_Vergara.pdf",
 };
 
@@ -135,16 +134,30 @@ export const educationInfo = [
 
 export const experience = [
 	{
-		role: "Prácticante",
-		company: "Open Systems",
-		companylogo: "/img/opensystems.png",
-		date: "Enero 2019 - Marzo 2019",
-		desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		role: "Desarrollador",
+		company: "Kuantum SpA",
+		companylogo: "/img/kuantum.jpg",
+		date: "Enero 2022 - Agosto 2022",
+		desc: "Desarrollo de aplicaciones en MvC con .NET Framework.",
 		descBullets: [
-			"Lorem ipsum dolor sit amet, consdfgectetur adipiscing elit",
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			".NET Model First",
+			"Symfony",
+			"Desarrollo de servicios REST"
 		],
 	},
+	{
+		role: "Digital Professional",
+		company: "LATAM Airlines",
+		companylogo: "/img/latam_airlines.jpg",
+		date: "Agosto 2022 - Actual",
+		desc: "Desarrollador especialista en backend.",
+		descBullets: [
+			"Java",
+			"Microservicos",
+			"Google Cloud",
+			"Metodologías Ágiles",
+		],
+	}
 ];
 
 export const projects = [
@@ -154,7 +167,6 @@ export const projects = [
 			"autenticación, autorización, subida de archivos, etc. Fue realizada con Laravel en su totalidad y desplegada en un servidor Nginx contenido en una vm ubuntu de" +
 			" google cloud.",
 		github: "https://github.com/LIbanezDev/damore-online-store",
-		link: "https://damore.drkoi.me",
 	},
 	{
 		name: "Fakebook",
