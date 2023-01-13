@@ -8,7 +8,7 @@ export const greetings = {
 		" de software, y aunque me ha tocado" +
 		" trabajar tanto en el Frontend como Backend, mi fuerte es el desarrollo en el lado del servidor. Dominio en tecnologías como .NET, Symfony, SQL Server y ReactJS. Soy" +
 		" un apasionado por el desarrollo y aquello me motiva dia a dia para entregar las mejores soluciones.",
-	resumeLink: "https://lucasign.me/CV_Lucas_Vergara.pdf",
+	resumeLink: "https://lucasign.com/CV_Lucas_Vergara.pdf",
 };
 
 export const openSource = {
@@ -53,20 +53,8 @@ export const skillsSection = {
 			fontAwesomeClassname: "logos:javascript",
 		},
 		{
-			skillName: "TypeScript",
-			fontAwesomeClassname: "logos:typescript-icon",
-		},
-		{
-			skillName: "reactjs",
-			fontAwesomeClassname: "vscode-icons:file-type-reactjs",
-		},
-		{
-			skillName: "nodejs",
-			fontAwesomeClassname: "logos:nodejs-icon",
-		},
-		{
-			skillName: "NestJS",
-			fontAwesomeClassname: "logos:nestjs",
+			skillName: "Spring Boot",
+			fontAwesomeClassname: "logos:spring",
 		},
 		{
 			skillName: "graphql",
@@ -101,7 +89,7 @@ export const skillsSection = {
 
 export const SkillBars = [
 	{
-		Stack: "Backend y bases de datos", //Insert stack or technology you have experience in
+		Stack: "Desarrollo Backend", //Insert stack or technology you have experience in
 		progressPercentage: "90", //Insert relative proficiency in percentage
 	},
 	{
@@ -111,12 +99,6 @@ export const SkillBars = [
 ];
 
 export const educationInfo = [
-	{
-		schoolName: "Colegio Particular San Mateo",
-		subHeader: "Tecnico de nivel medio en Telecomunicaciones",
-		duration: "Marzo 2016 - Marzo 2018",
-		desc: "Formación en area de redes a través de cursos oficiales de Cisco (CCNA 1, CCNA 2) y construccion de computadores (It Essentials).",
-	},
 	{
 		schoolName: "Universidad Técnica Federico Santa María",
 		subHeader: "Técnico Universitario en Informática",
