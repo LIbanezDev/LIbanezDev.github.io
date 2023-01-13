@@ -53,8 +53,8 @@ export const skillsSection = {
 			fontAwesomeClassname: "logos:javascript",
 		},
 		{
-			skillName: "Spring Boot",
-			fontAwesomeClassname: "logos:spring",
+			skillName: "SpringBoot",
+			fontAwesomeClassname: "vscode-icons:file-type-spring",
 		},
 		{
 			skillName: "graphql",
